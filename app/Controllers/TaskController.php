@@ -10,18 +10,12 @@ class TaskController
 
     public function index()
     {
-        try {
-            $completed = Request::get('completed');
-            if($completed != null) {
-                $tasks = QueryBuilder::get('tasks', ['completed', '=', $completed]);
-            } else {
-                $tasks = QueryBuilder::get('tasks');
-            }
-        } catch (\Exception $exception) {
-            var_dump($exception);
+        $completed = Request::get('completed');
+        if($completed != null) {
+            $tasks = QueryBuilder::get('tasks', ['completed', '=', $completed]);
+        } else {
+            $tasks = QueryBuilder::get('tasks');
         }
-        exit;
-
         view('index', [
             'tasks' => $tasks
         ]);
