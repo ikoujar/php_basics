@@ -3,7 +3,7 @@
 $dotenv = \Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
-print_r($_ENV);
+print_r($_ENV ?? ['xxxx' => 'xxx']);
 exit;
 
 //return [
