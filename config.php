@@ -1,9 +1,10 @@
 <?php
 
-
 try {
-    $dotenv = \Dotenv\Dotenv::createImmutable(__DIR__);
-    $dotenv->load();
+    if (file_exists(__DIR__ . '/.env')) {
+        $dotenv = \Dotenv\Dotenv::create(__DIR__);
+        $dotenv->load();
+    }
     print_r($_ENV);
 } catch (Exception $e) {
     var_dump($e);
