@@ -13,9 +13,7 @@ App::set('config', require 'config.php');
 //$log = new Logger('PHP_BASICS');
 //$log->pushHandler(new StreamHandler('queries.log', Logger::INFO));
 
-print_r(App::get('config')['database']);
-
-//QueryBuilder::make(
-//    DBConnection::make(App::get('config')['database'])
-//);
+QueryBuilder::make(
+    DBConnection::make(App::get('config')['database'])
+);
 
