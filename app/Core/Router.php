@@ -27,6 +27,8 @@ class Router
 
     public function resolve($uri, $method)
     {
+        var_dump($uri);
+        var_dump($method);
         if (array_key_exists($uri, $this->{$method})) {
             $action = $this->{$method}[$uri];
             $this->callAction(...$action);
