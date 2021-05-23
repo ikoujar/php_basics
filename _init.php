@@ -8,6 +8,9 @@ use Monolog\Handler\StreamHandler;
 
 require 'vendor/autoload.php';
 
+print_r('before_config');
+exit;
+
 App::set('config', require 'config.php');
 
 //$log = new Logger('PHP_BASICS');
